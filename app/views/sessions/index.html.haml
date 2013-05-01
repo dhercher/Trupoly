@@ -1,0 +1,17 @@
+%h1 Trupoly Login
+#login
+  %form#login_form{:method => 'post', :action => :login_post}
+    %fieldset
+      %legend Public Login 
+      %ul
+        %li
+          %label{:for => "email"} Email
+          %input#email{:type => "text", :value => "#{params[:email]}", :name => "email"}
+        %li
+          %label{:for => "password"} Password
+          %input#password{:type => "password", :value => "", :name => "password"}
+        %li
+          %button.login{:type => "submit"} Login
+
+%h2
+= link_to 'Create New Account', :new_user

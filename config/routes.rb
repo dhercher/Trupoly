@@ -1,4 +1,16 @@
 Trupoly::Application.routes.draw do
+  
+  
+  root to: 'users#show'
+  get   '/myaccount', :to => 'users#show', :as => :show
+  get   '/settings', :to => 'users#settings', :as => :settings
+  get   '/logout', :to => 'users#logout', :as => :logout
+
+  get   '/login', :to => 'sessions#index', :as => :login
+  post  '/login_post', :to => 'sessions#login', :as => :login_post
+  get   '/new_user', :to => 'sessions#new', :as => :new_user
+  post  '/create', :to => 'sessions#create', :as => :create
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
