@@ -52,18 +52,48 @@
   border-bottom-right-radius: 5px;
 }
 
-.container2 {
+.irr_container {
   outline: #000000 solid medium;
   padding: 10px;
   position: fixed;
   top: 30%;
-  left: 15%;
+  left: 13%;
   width: 15%;
   height: 10%;
   background-color: #FFFFFF;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 30px;
+  text-align: center;
+}
+
+.account_total_container {
+  outline: #000000 solid medium;
+  padding: 10px;
+  position: fixed;
+  top: 30%;
+  left: 31%;
+  width: 15%;
+  height: 10%;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.rent_rec_container {
+  outline: #000000 solid medium;
+  padding: 10px;
+  position: fixed;
+  top: 30%;
+  left: 49%;
+  width: 15%;
+  height: 10%;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
   text-align: center;
 }
 
