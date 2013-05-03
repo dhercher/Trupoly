@@ -5,9 +5,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :first_name
       t.string :last_name
-      t.string :account_total
-      t.string :account_invested
-      t.string :account_balance
+      t.float :account_total
+      t.float :account_invested
+      t.float :account_balance
 
       t.timestamps
     end

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  country_code: MyString
+  city: MyString
+  state: MyString
+  address: MyString
+  description: MyString
+  purchase_value: 
+  irr: 
+  client_irr: 
+  available_value: 
+
+two:
+  country_code: MyString
+  city: MyString
+  state: MyString
+  address: MyString
+  description: MyString
+  purchase_value: 
+  irr: 
+  client_irr: 
+  available_value: 

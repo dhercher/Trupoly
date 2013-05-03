@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :require_user
 
   def show
+  	@style_sheets = 'users'
   	@user = User.find(session[:user_id])
 
   rescue ActiveRecord::RecordNotFound
