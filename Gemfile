@@ -13,6 +13,7 @@ end
 gem 'haml-rails'
 gem 'debugger'
 gem 'unicorn'
+gem 'thin'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
