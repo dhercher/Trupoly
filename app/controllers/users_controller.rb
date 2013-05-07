@@ -27,5 +27,6 @@ class UsersController < ApplicationController
       flash[:error] = "You must be logged in to access this section"
       redirect_to :login
     end
+    @admin = User.find(session[:user_id]).is_admin?
   end
 end

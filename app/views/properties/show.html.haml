@@ -1,0 +1,16 @@
+.container
+  %h1 Property Description
+  %span.address= @property.address
+  %span.city= @property.city
+  %span.state= @property.state
+  %span.country_code= @property.country_code
+  %br
+  Purchase Value:  $
+  %span.purchase_value= @property.purchase_value
+  %br
+  Available Value:  $
+  %span.available_value= @property.available_value
+  %br
+  IRR
+  %span.irr= @property.client_irr
+  \%

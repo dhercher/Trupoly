@@ -141,3 +141,9 @@ h1 {
   right: 10px;
   top: 15px;
 }
+
+.admin_button {
+  position: absolute;
+  right: 130px;
+  top: 15px;
+}

@@ -1,6 +1,15 @@
 Trupoly::Application.routes.draw do
-  
-  
+
+  get "properties/index"
+
+  get "admin/show"
+
+  get "admin/new_prop"
+
+  get "admin/new"
+
+  match '/properties/show/:id' => "properties#show", :via => :get, :as => :prop
+
   root to: 'users#show'
   get   '/myaccount', :to => 'users#show', :as => :show
   get   '/settings', :to => 'users#settings', :as => :settings
@@ -10,6 +19,8 @@ Trupoly::Application.routes.draw do
   post  '/login_post', :to => 'sessions#login', :as => :login_post
   get   '/new_user', :to => 'sessions#new', :as => :new_user
   post  '/create', :to => 'sessions#create', :as => :create
+
+  post  '/admin/new', :to => 'admin#new', :as => :new_prop
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
