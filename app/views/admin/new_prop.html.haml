@@ -1,0 +1,25 @@
+.container
+  %h1 Load New Property
+  = form_tag new_prop_path do
+    = label :property, :address, 'Address'  
+    = text_field :experience, 'address'
+    = label :property, :city, "City"
+    = text_field :property, 'city'
+    = label :property, :state, "State"
+    = text_field :property, 'state'
+    = label :property, :country_code, "Country Code"
+    = text_field :property, 'country_code' 
+    %br
+    = label :property, :irr, '**IRR**'
+    = number_field :property, :irr, :in => 0...100, :step => 0.01
+    = label :property, :client_irr, 'Client IRR'
+    = number_field :property, :client_irr, :in => 0...100, :step => 0.01
+    = label :property, :purchase_value, '**Purchase Value** '
+    = number_field :property, :purchase_value, :in => 0...100000000, :step => 0.01
+    %br
+    = label :property, :description, "Description"
+    = text_field :property, 'description' 
+    %br
+    = submit_tag "Submit" 
+
+/ :address, :available_value, :city, :client_irr, :country_code, :description, :irr, :purchase_value, :state
