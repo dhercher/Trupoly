@@ -1,0 +1,10 @@
+.container
+  %h1 Invest in a Property
+  = form_tag :root do
+    = label :property, :property_id, 'Choose Property'
+    = select_tag "property_id", options_from_collection_for_select(@properties, "id", "description")
+    = label :property, :investment_value, '**Investment Value** '
+    = number_field :property, :investment_value, :in => 0...100000000, :step => 0.01
+    %br
+    = hidden_field_tag :user_id, @user
+    = submit_tag 'Submit'

@@ -13,7 +13,7 @@
     - if @style_sheets != 'sessions'
       = button_to 'LOGOUT', '/logout', class:'button logout_button', :method => :get
     - if @admin
-      = button_to 'ADMIN', '/admin/new_prop', class:'button admin_button', :method => :get
+      = button_to 'ADMIN', '/admin/show', class:'button admin_button', :method => :get
     = render 'layouts/header'
     = yield
     = render 'layouts/footer'

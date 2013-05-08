@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def is_admin?()
-  	return self.email =~ /^dhercher@colgate.edu$/ 
+  	return self.email =~ /^(dhercher@colgate.edu|rsmith@colgate.edu)$/ 
   end
 
 end

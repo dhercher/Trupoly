@@ -20,8 +20,14 @@ class SessionsController < ApplicationController
   	params[:user][:account_balance] = 0
   	params[:user][:account_invested] = 0
   	params[:user][:account_total] = 0
-  	user = User.create(params[:user])
-  	session[:user_id] = user.id
-  	redirect_to :root
+  	user = User.where('lower(email) = lower(?)', params[:user][:email]).first_or_initialize(params[:user])
+  	if user.new_record?
+  		user.save
+  		session[:user_id] = user.id
+  		redirect_to :root
+  	else
+  		flash[:notice] = "Email already exists"
+  		redirect_to :new_user
+  	end
   end
 end

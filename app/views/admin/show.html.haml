@@ -1,2 +1,25 @@
-%h1 Admin#show
-%p Find me in app/views/admin/show.html.haml
+.container
+  %h1 User Accounts
+  %table#users
+    %thead
+      %tr
+        %th=link_to 'Email', admin_show_path(:sort => 'email'), :id => 'email_header'
+        %th=link_to 'First Name', admin_show_path(:sort => 'first_name'), :id => 'first_name_header'
+        %th=link_to 'Last Name', admin_show_path(:sort => 'last_name'), :id => 'last_name_header'
+        %th=link_to 'Account Total', admin_show_path(:sort => 'account_total'), :id => 'account_total_header'
+        %th=link_to 'Account Invested', admin_show_path(:sort => 'account_invested'), :id => 'account_invested_header'
+        %th=link_to 'Account Balance', admin_show_path(:sort => 'account_balance'), :id => 'account_balance_header'
+    %tbody
+      - @users.each do |ex|
+        %tr
+          %td= ex.email
+          %td= ex.first_name
+          %td= ex.last_name
+          %td= ex.account_total
+          %td= ex.account_invested
+          %td= ex.account_balance
+          %td= link_to "invest", "/admin/investment/#{ex.id}" 
+  %h2
+    =  link_to 'Add New Property', admin_new_prop_path  
+
+
