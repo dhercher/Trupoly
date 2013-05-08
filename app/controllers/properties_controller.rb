@@ -1,4 +1,4 @@
-class PropertiesController < ApplicationController
+class PropertiesController < UsersController
   def show
   	id = params[:id]
     @property = Property.find(id)
