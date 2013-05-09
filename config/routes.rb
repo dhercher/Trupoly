@@ -8,8 +8,10 @@ Trupoly::Application.routes.draw do
 
   get "admin/new"
 
+  match '/users/show/:id' => "users#show", :via => :get, :as => :show_user
   match '/properties/show/:id' => "properties#show", :via => :get, :as => :prop
-  match '/admin/investment/:id', :to => 'admin#investment', :as => :invest
+  match '/admin/investment/:id', :to => 'admin#investment', :as => :investment
+  post '/admin/invested', :to => 'admin#invest', :as => :invest
 
   root to: 'users#show'
   get   '/myaccount', :to => 'users#show', :as => :show

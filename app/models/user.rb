@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
   	irr_sum = 0
   	cap_sum = 0
   	positions.each do |p|
-  		irr_sum = irr_sum + p.client_irr * p.investments.capital
-  		cap_sum = cap_sum + p.investments.capital
+  		p.investments.each do |q|
+  			irr_sum = irr_sum + p.client_irr * q.capital
+  			cap_sum = cap_sum + q.capital
+  		end
   	end
   	if irr_sum == 0
   		return 0

@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
   def show
   	@style_sheets = 'users'
-  	@user = User.find(session[:user_id])
+    if @admin
+      @user = User.find(params[:id] || session[:user_id])
+    else
+  	  @user = User.find(session[:user_id])
+    end
 
   rescue ActiveRecord::RecordNotFound
   	flash[:error] = "An Error Occurred, Please Login Again"
@@ -25,7 +29,7 @@ class UsersController < ApplicationController
   def require_user
     unless session[:user_id]
       flash[:error] = "You must be logged in to access this section"
-      redirect_to :login
+      redirect_to :login and return
     end
     @admin = User.find(session[:user_id]).is_admin?
   end

@@ -12,7 +12,7 @@
     %tbody
       - @users.each do |ex|
         %tr
-          %td= ex.email
+          %td= link_to ex.email, "/users/show/#{ex.id}"
           %td= ex.first_name
           %td= ex.last_name
           %td= ex.account_total
