@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :account_balance, :account_invested, :account_total, :email, :first_name, :last_name, :password
   has_many :investments
-
+  accepts_nested_attributes_for :investments
 
   def IRR?
   	positions = Property.joins(:investments).where(:investments => {:user_id => self.id})

@@ -23,6 +23,8 @@ class AdminController < UsersController
 
   def invest
   	invest = Investment.where('user_id = ? and property_id = ?', params[:user_id], params[:property_id]).first_or_initialize(:capital => params[:property][:investment_value].to_f, :user_id => params[:user_id], :property_id => params[:property_id])
+  	invest.user_id = params[:user_id].to_i
+  	invest.property_id = params[:property_id].to_i
   	if invest.persisted?
   		invest.capital = invest.capital + params[:property][:investment_value].to_f
   	end
