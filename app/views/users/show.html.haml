@@ -16,5 +16,16 @@
   Rent Received $
   =@user.account_balance
 
-%h5
+.account_stats_container
+  %h5
+  Value:
+  =@user.account_invested
+  %br
+  Properties:
+  %br
+  Available for Withdrawl
+  =@user.account_balance
+
+
+%h6
 = link_to 'Sign Out', :logout

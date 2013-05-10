@@ -33,6 +33,12 @@ class AdminController < UsersController
   	user.account_total = user.account_total + params[:property][:investment_value].to_f
   	user.account_invested = user.account_invested + params[:property][:investment_value].to_f
   	user.save
+  	# Just for continuity of records and sales?
+  	investment = Purchase.first_or_initialize(:investment => params[:property][:investment_value].to_f, :user_id => params[:user_id], :property_id => params[:property_id])
+  	investment.user_id = params[:user_id].to_i
+  	investment.property_id = params[:property_id].to_i
+  	investment.save
+
   	redirect_to proc {show_user_url(params[:user_id])}
   end
 

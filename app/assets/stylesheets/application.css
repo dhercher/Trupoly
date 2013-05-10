@@ -27,6 +27,7 @@
 
 
 .container {
+  outline: #000000 solid medium;
   padding: 10px;
   position: fixed;
   top: 15%;
@@ -97,6 +98,20 @@
   text-align: center;
 }
 
+.account_stats_container {
+  outline: #000000 solid medium;
+  padding: 10px;
+  position: fixed;
+  top: 46%;
+  left: 13%;
+  width: 51%;
+  height: 30%;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+}
 
 h1 {
   font-family: Garamond;
