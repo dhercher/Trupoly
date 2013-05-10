@@ -25,4 +25,15 @@ class User < ActiveRecord::Base
   	return self.email =~ /^(dhercher@colgate.edu|rsmith@colgate.edu)$/ 
   end
 
+  def num_properties?
+  	props = Property.joins(:investments).where(:investments => {:user_id => self.id})
+  	num_props = 0
+  	props.each do |p|
+  		num_props = num_props + 1
+  	end
+  	return num_props
+  rescue ActiveRecord::RecordNotFound
+  	return 0
+  end
+
 end
